@@ -12,7 +12,7 @@ npm install @amphibian/promise-timeout
 import timeout from '@amphibian/promise-timeout';
 
 async function getUsers() {
-	const response = await timeout(() => fetch('https://reqres.in/api/users'));
+	const response = await timeout(fetch('https://reqres.in/api/users'));
 	const user = await response.json();
 	return user;
 }
@@ -21,9 +21,9 @@ async function getUsers() {
 ### With options
 
 ```javascript
-timeout(() => (
-	fetch('https://reqres.in/api/users').then((response) => response.json())
-), {timeout: 2000});
+const request = fetch('https://reqres.in/api/users')
+	.then((response) => response.json());
+timeout(request, {timeout: 2000});
 ```
 
 ## `timeout(function, options)`
