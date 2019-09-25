@@ -1,0 +1,44 @@
+{
+    "name": "@amphibian/promise-timeout",
+    "version": "1.0.0",
+    "description": "promise timeouts",
+    "main": "index.js",
+    "browser": "index.browser.js",
+    "repository": "https://github.com/amphibian-no/promise-timeout",
+    "author": "Thomas Lindstrøm <t@hom.as>",
+    "scripts": {
+        "test": "jest --coverage",
+        "lint": "xo",
+        "fix": "xo --fix",
+        "build": "node build.js",
+        "prepublish": "npm run build"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/core": "^7.4.3",
+        "@babel/plugin-transform-runtime": "^7.4.3",
+        "@babel/preset-env": "^7.4.3",
+        "babel-eslint": "^10.0.1",
+        "eslint-config-amphibian": "^1.1.2",
+        "fs-extra": "^7.0.1",
+        "jest": "^23.6.0",
+        "xo": "^0.23.0"
+    },
+    "xo": {
+        "parser": "babel-eslint",
+        "extends": [
+            "eslint-config-amphibian"
+        ],
+        "overrides": [
+            {
+                "files": "test.js",
+                "envs": [
+                    "jest"
+                ]
+            }
+        ]
+    },
+    "dependencies": {
+        "@babel/runtime-corejs2": "^7.4.5"
+    }
+}
